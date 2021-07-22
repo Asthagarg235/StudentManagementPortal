@@ -1,12 +1,22 @@
 import Button from "./Button";
 import "../../index.css";
+import * as icons from "react-icons/hi";
 
-const xyz = {
+const AllIcons = {undefined, ...icons}
+
+export default {
     title: "My awesome button",
     component: Button,
     argTypes: {
         theme:{
             control: {type: "select"}
+        },
+        Icon:{
+            options: Object.keys(AllIcons),
+            
+            control: {
+                type: "select",
+            },
         },
     },
 };
@@ -18,7 +28,5 @@ main.args = {
     children: "Sign in",
     type: "submit",
     className: "",
-    disabled: "false",
+    disabled: false,
 };
-
-export default xyz;

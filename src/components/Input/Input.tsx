@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, memo } from "react";
+import { InputHTMLAttributes, memo } from "react";
 interface Props extends InputHTMLAttributes<HTMLInputElement>{
     id: string;
     touched?: boolean;

@@ -1,10 +1,7 @@
-import React, { ChangeEvent, FocusEvent, FC , memo } from "react";
+import React, { memo } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { HiLockClosed } from "react-icons/hi";
-import { useState } from "react";
 import {FaSpinner} from "react-icons/fa";
 import * as yup from "yup";
-import { useEffect } from "react";
 import { useFormik } from "formik";
 import Input from "../components/Input/Input";
 import Button from "../components/Button/Button";
@@ -12,7 +9,7 @@ interface Props{
 }
 const Login: React.FC<Props> = (props) => {
   const history = useHistory();
-  const {handleSubmit, getFieldProps, touched, isSubmitting, errors, isValid}
+  const {handleSubmit, getFieldProps, touched, isSubmitting, errors}
    = useFormik({
     initialValues: {
       email: "",

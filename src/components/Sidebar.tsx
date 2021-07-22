@@ -1,4 +1,4 @@
-import { FC , memo } from "react";
+import { memo } from "react";
 interface Props{
 }
 const Sidebar: React.FC<Props> = (props) => {

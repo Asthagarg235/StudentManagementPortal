@@ -1,4 +1,4 @@
-import { FC , memo } from "react";
+import { memo } from "react";
 interface Props{
 }
 const Recordings: React.FC<Props> = (props) => {

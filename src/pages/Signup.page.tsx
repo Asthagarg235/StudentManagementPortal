@@ -1,6 +1,5 @@
-import { FC , memo } from "react";
+import { memo } from "react";
 import { Link } from "react-router-dom";
-import { HiLockClosed } from "react-icons/hi";
 import Button from "../components/Button/Button";
 interface Props{
 }

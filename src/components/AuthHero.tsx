@@ -1,4 +1,4 @@
-import { FC , memo, useEffect } from "react";
+import { memo, useEffect } from "react";
 interface Props{
 }
 const AuthHero: React.FC<Props> = (props) => {
