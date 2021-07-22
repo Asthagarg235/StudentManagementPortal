@@ -1,6 +1,7 @@
 import { FC , memo } from "react";
 import { Link } from "react-router-dom";
 import { HiLockClosed } from "react-icons/hi";
+import Button from "../components/Button/Button";
 interface Props{
 }
 const Signup: React.FC<Props> = (props) => {
@@ -72,15 +73,10 @@ const Signup: React.FC<Props> = (props) => {
               </label>
             </div>
           <div >
-            <button
+            <Button
               type="submit"
-              className="group relative w-32 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                <HiLockClosed className="h-4 w-4 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
-              </span>
-              Login
-            </button>
+              children="Sign up"
+            />
           </div>
         </form>
       </div>
