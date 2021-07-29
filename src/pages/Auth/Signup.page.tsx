@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import Button from "../components/Button/Button";
+import Button from "../../components/Button/Button";
 interface Props{
 }
 const Signup: React.FC<Props> = (props) => {
@@ -11,7 +11,7 @@ const Signup: React.FC<Props> = (props) => {
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Get started with a free account</h2>
           <p className="mt-2 text-sm text-gray-600">
             Already have an account ?{' '}
-            <Link to="/auth/login"><span className = "text-blue-500">Log in</span></Link>
+            <Link to="/login"><span className = "text-blue-500">Log in</span></Link>
           </p>
         </div>
         <form className="mt-8 space-y-6" action="#" method="POST">

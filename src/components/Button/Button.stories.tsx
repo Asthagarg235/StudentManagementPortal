@@ -13,7 +13,6 @@ export default {
         },
         Icon:{
             options: Object.keys(AllIcons),
-            
             control: {
                 type: "select",
             },
@@ -21,7 +20,7 @@ export default {
     },
 };
 
-const Template = (args: any) => <Button {...args} theme="primary">sign in</Button>;
+const Template = (args: any) => <Button {...args} >sign in</Button>;
 
 export const main : any = Template.bind({});
 main.args = {

@@ -3,9 +3,14 @@ import { Link, useHistory } from "react-router-dom";
 import {FaSpinner} from "react-icons/fa";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import Input from "../components/Input/Input";
-import Button from "../components/Button/Button";
+import Input from "../../components/Input/Input";
+import Button from "../../components/Button/Button";
+import Alert from "../../components/Alert/Alert";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
+import { User } from "../../models/User";
+import { login } from "../../api";
 interface Props{
+  onLogin: (user: User) => void;
 }
 const Login: React.FC<Props> = (props) => {
   const history = useHistory();
@@ -19,13 +24,13 @@ const Login: React.FC<Props> = (props) => {
         email: yup.string().required().email(),
         password: yup.string().required().min(8)
     }),
-    onSubmit: (data, {setSubmitting}) => {
-      console.log("form submittng", data);
-      setTimeout(() => {
-        console.log("form submitted successfully");
-        history.push("/dashboard")
-      }, 5000);
-    }
+    onSubmit: (data) => {
+      login(data).then((u) => {
+        props.onLogin(u);
+        history.push("/dashboard");
+      });
+
+    },
   });
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-24">
@@ -34,7 +39,7 @@ const Login: React.FC<Props> = (props) => {
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Log in to your account</h2>
           <p className="mt-2 text-sm text-gray-600">
             New here ?{' '}
-            <Link to="/auth/signup"><span className = "text-blue-500">Create an account</span></Link>
+            <Link to="/signup"><span className = "text-blue-500">Create an account</span></Link>
           </p>
         </div>
         <form className="mt-8 space-y-6" action="#" method="POST"
@@ -93,7 +98,6 @@ const Login: React.FC<Props> = (props) => {
                 Forgot your password?
               </a>
             </div>
-
           
         </form>
       </div>

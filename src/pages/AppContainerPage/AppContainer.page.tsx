@@ -1,14 +1,13 @@
 import { memo } from "react";
 import { Route, Switch } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 import DashboardPage from "./Dashboard.page";
 import RecordingsPage from "./Recordings.page";
 interface Props{
 }
 const AppContainer: React.FC<Props> = (props) => {
   return (
-    <div className="flex flex-row">
-        <Sidebar></Sidebar>
+    <div >
         <Switch>
             <Route path="/dashboard">
                 <DashboardPage></DashboardPage>

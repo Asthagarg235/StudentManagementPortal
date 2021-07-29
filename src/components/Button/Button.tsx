@@ -1,12 +1,14 @@
 import { ButtonHTMLAttributes } from "react";
 import { memo } from "react";
+import { IconType } from "react-icons";
 import { HiLockClosed, HiLogin, HiMoon } from "react-icons/hi";
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
     theme?: "primary" | "secondary";
     children: string;
+    Icon?: IconType;
     
 }
-const Button: React.FC<Props> = ({children, className, theme, ...rest}) => {
+const Button: React.FC<Props> = ({children, className, Icon, theme, ...rest}) => {
     const themeClasses = theme === "primary"? "bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500" : "bg-gray-600 hover:bg-gray-700 focus:ring-gray-500";
     const iconThemeClasses = theme === "primary"? "text-indigo-500 group-hover:text-indigo-400" : "text-gray-500 group-hover:text-gray-400";
   return (
@@ -24,6 +26,7 @@ const Button: React.FC<Props> = ({children, className, theme, ...rest}) => {
 
 Button.defaultProps = {
     theme: "primary"
+
 }
 
 export default memo(Button);
